@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Behavioral Learning for Asymmetric Embodied Cooperative-Competitive Agents</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Behavioral Learning for Asymmetric Embodied Cooperative-Competitive Agents</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous</span>
+          </div>
+
+          <!-- 删除学校信息和 publication-links 区块（119-170行） -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The phenomenon of weaker groups overcoming stronger opponents through cooperation in nature has inspired our exploration of cooperative-competitive mechanisms in multi-agent systems. In this work, we investigate emergent coordination policies in asymmetrical confrontations, focusing on how weaker agents collectively counter stronger opponents. The challenge of modeling such intricate interplay with a multilayer perceptron led us to adopt a Transformer architecture, which excels at capturing the complex, dynamic relationships between agents. We develop a two-phase curriculum training, with an attention-based strategy that effectively addresses policy training challenges in high-dimensional state spaces, and construct a scalable arena task that validates their effectiveness. Motivated by the Transformer's cooperative advantage, we utilize integrated gradients to attribute the contribution of attentions for each action dimension—thereby bridging attentions and behaviors and revealing how attentional dynamics scaffold collective superiority. This research provides a paradigm and an analytic approach for distributed collaboration in mixed adversarial systems.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img
+            src="./static/images/attribution_overview.png"
+            alt="Method Overview"
+            style="display:block; margin:0 auto; max-width:100%;"
+          />
+          <p style="margin-top:1em;">
+            <b>Three-stage attribution pipeline.</b> Stage 1 attributes action-critical attention weights
+           <span>w<sub>ij</sub></span> via integrated gradients, darker cells in the lower-middle heatmap
+           signal stronger influence. Stage 2 traces these weights to concrete query-key channels within the
+           transformer encoder. Stage 3 attributes the salient channels back to observation-space features.
+           Color coding in the lower-left <span>q<sub>i</sub>/k<sub>j</sub></span> bars marks each dimension's
+           primary attribute in the upper-left observation matrix, thereby revealing cooperative and
+           adversarial information exchange.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Emergent Behavior</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">2Ants vs 1Bug</h3>
+        <h4 class="title is-5">Reduced-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Reduced_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>After a brief probing phase, the lower Ant slips beneath the Bug and lifts it just long enough for both Ants to lock into a unified block. The Bug counters by sliding along their flank, wedging itself between the pair; clamped by two powerful legs, one Ant is hoisted sky-ward and dragged toward the shrinking rim. Reading the momentum, the free Ant opts for a calculated sacrifice: it drives with the Bug's own forward thrust, toppling both captor and captive over the boundary. Because the Bug's mass crosses first, Ants secure the match.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Reduced_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>At the opening clash, the left-flank Ant hurls itself into the Bug, forcing a brief retreat. That breathing space lets the pair lock bodies into a compact phalanx just as the Bug surges forward again, its drive now countered by the Ants' combined thrust; neither side yields ground. A fleeting upward tilt in the Bug's posture exposes its centre of mass, and the right-hand Ant converts that slip into an explosive upward lift—launching both combatants over the rim, sealing the match for the Ant team despite the sacrifice.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Reduced_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Bug hammers the left-flank Ant backward, then wedges a leg between the pair to sever their coordination. Undeterred, the displaced Ant drops toward the lower quadrant, sweeps right around that obstructing limb, and comes up behind its teammate so their forces align. Although the Bug still flips this “lower” Ant over the rim, the brief alliance has already secured the remaining Ant a firm central foothold. With the arena's radius now scarcely larger than its own body, the Bug lacks both room and time to mount a second eviction, losing the game.</p>
+            </div>
+          </div>
+        </div>
+        <h4 class="title is-5">Full-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Full_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The two ants stacked nose-to-tail like a single lever, the two Ants press the rod’s “upper tip” against the Bug and pin it near the rim. Sensing an imminent ring-out, the Bug swings around to the flank, yet the Ants fuse even tighter, erasing the corridor it hoped to exploit. In that clinch the lower Ant, already crouched beneath the Bug’s centre of mass, heaves upward, hooks a trailing leg, and—leveraging that sudden grip—sweeps counter-clockwise, catapulting the Bug downward through the constricted lower gap while both Ants drift safely into the open space above.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Full_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>Aligned nose-to-tail, the two Ants brace their front partner squarely against the Bug, halting its advance. The Bug vaults overhead, hoping to drop between them and pry the two ants apart; instead, the Ants squeeze the gap shut, remain locked, and press inward. As the boundary contracts, the Bug's aborted landing overruns the rim, while the inseparable Ant pair stays safely inside to claim victory.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/2ant1bug/Full_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Ant pair initially fuses into a single driving surface but, mis-aligned, fails to generate enough forward thrust; the Bug counters by bulldozing them toward the rim. Just before elimination, the Ants split—one darts upward, the other slips left—momentarily overloading the Bug’s choice of target. It commits to the rising Ant; in that heartbeat the lateral Ant veers underneath the Bug’s belly, re-joins its partner, and together they resume a coordinated shove. The renewed, two-point pressure outpaces the Bug’s recovery, forcing it across the shrinking boundary while both Ants remain inside.</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Interpolating. -->
+
+        <h3 class="title is-4">3Ants vs 1Bug</h3>
+        <h4 class="title is-5">Reduced-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Reduced_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The trio initially pursues a stack-or-triangle setup. Seizing the moment when one Ant vaults to rejoin its partners, the Bug slips between them mid-air, dispatches the latecomer, yet forfeits its grip on the center line. The surviving pair immediately realign head-to-tail along that now-open radial corridor; synchronized drives hold the Bug at bay as the arena narrows, turning their numerical loss into spatial control and propelling the Bug beyond the contracting boundary.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Reduced_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Ant line advances in lockstep, squeezing the Bug's escape lane until it stalls at the rim. Capitalizing on a strength edge, the Bug bursts through the nearest Ant; the resulting momentum flings the left-flank Ant out and slams the surviving pair against the boundary. Those two decelerate just shy of self-elimination, then split to opposite flanks and mount a coordinated pincer that shepherds the Bug over the contracting edge, clinching a reduced-team win.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Reduced_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Ant trio marches in a single-plane file that progressively forces the Bug's body—legs and nearly its center of mass—past the shrinking rim. Exploiting their lack of vertical stacking, the Bug vaults over them, landing inside the formation and booting both flank Ants out. Yet the arena has already narrowed to just a handful of viable footholds; on each descent the lone Ant pre-empts the spot, obliging the Bug to perch with one flank on the Ant's carapace and the other hanging free. Starved of leverage and lateral torque, the Bug lose the game.</p>
+            </div>
+          </div>
+        </div>
+        <h4 class="title is-5">Full-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Full_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>A lone Ant surges forward, herding the Bug toward the tightening perimeter while its two teammates shadow the advance. When the boundary contracts to a critical radius, the three Ants cease driving outward and lock into an interlaced triangular brace a step inside the edge. Each time the Bug tries to settle, the whole triangle glides as a unit, blanketing the intended foothold completely. Unable to gain balanced purchase or push back toward the center, the Bug teeters over the line, handing the Ants a decisive victory.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Full_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Bug first leverages its superior impulse to knock away a lone Ant and lunge toward the arena's core. Sensing the threat, the three Ants stack vertically, compressing the air corridor so a low-arc vault becomes impossible. Forced into a higher, longer hover, the Bug gives the trio the breathing room they need to fan out into a tight triangular cage that monopolizes every viable foothold beneath. When the Bug finally descends, its center of mass tips outward, and the Ants nudge it past the rim for the win.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant1bug/Full_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Bug launches a forceful kick into the right-flank Ant; the Ant skids away, yet the counterforce propels the Bug itself toward the arena's upper rim.  In response, the three Ants snap into an arrowhead: the tip drives forward while the wings seal off lateral exits, yet the flat formation leaves a low ridge the Bug can vault. The Bug opts for a low-arc vault over this ridge but delays its touchdown, granting the Ants time to unfold into a compact triangle that blankets every viable foothold beneath.  Forced to perch with one side unsupported, the Bug tilts off-balance, and a final shove dispatches it beyond the rim—securing the Ants' win.</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Interpolating. -->
+
+        <h3 class="title is-4">3Ants vs 2Bugs</h3>
+        <h4 class="title is-5">Reduced-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Reduced_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>Three Ants deploy in a compact triangle. Twin Bugs spear in from opposite flanks—the lower Bug hauling the formation rightward, the upper Bug clipping the left-side Ant cleanly out. With the arena’s radius already collapsing, the surviving Ant pair elongates their legs into rigid struts, digs for purchase, and converts the residual torque into a decisive shove that sweeps the left bug across the rim, clinching the bout for the Ants.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Reduced_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The upper Bug vaults between the central Ant pair and their right-flank teammate, severing any chance of a three-Ant union. Joined by the second Bug, it presses inward, hoping to wrest control of the hub. Recognizing that the isolated right-flank Ant cannot break through the bulkier intruder, the central duo abandons rescue, digs into the midpoint, and absorbs every shove. When the arena contracts to a pin-sized core, the Bugs—now stranded beyond that last foothold—slide over the rim, leaving the entrenched Ant pair inside to claim the match.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Reduced_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>An upper Bug darts between the forward-posted Ant and the two allies clustered down-right, intent on splitting the trio. Rather than ceding the isolate, all three Ants slide beneath the intruder in concert, lever it upward, and suspend it where its legs find no purchase. The bottom pair then stack vertically, raising a barricade that denies the second Bug a path to the hub; outnumbered at the centre and unable to generate counter-thrust, both Bugs succumb as the arena shrinks, sealing an attritional Ant victory.</p>
+            </div>
+          </div>
+        </div>
+        <h4 class="title is-5">Full-Team Victory</h4>
+        <div class="content has-text-justified" style="display: flex; gap: 2em; justify-content: center; align-items: flex-start;">
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Full_Team_Victory1.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The Bugs topple the lead Ant yet leave it inside the arena. Lying supine, that Ant extends two opposite legs—each pressing against a different Bug—while its two upright teammates brace behind. On a shared cue the trio thrusts upward, the grounded Ant acting as lever: both Bugs sail beyond the circular boundary, ending the bout in an Ant win.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Full_Team_Victory2.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>Both teams charge head-on, yet the Bugs' bid to tighten their formation backfires: the lower Bug over-rotates, pitching toward the bottom rim. Exploiting the lapse, the nearest Ant darts beneath the tilting insect and, with its two partners, locks into a rigid triangular cage. That structure absorbs every ensuing collision and monopolizes the remaining footholds, leaving the Bugs perpetually off-balance. The Bugs finally slips over the boundary, handing the Ant trio a clean win.</p>
+            </div>
+          </div>
+          <div style="flex:1; max-width:32%; display:flex; flex-direction:column; align-items:center;">
+            <video src="./static/videos/3ant2bug/Full_Team_Victory3.mp4" controls style="display:block; width:100%;"></video>
+            <div class="content has-text-justified" style="margin-top: 0.5em;">
+              <p>The left-flank Ant rams the outer Bug to carve maneuvering space, then swings inside and—together with the other two Ants—clamps the larger, more central Bug by its fore-legs. That immobilized Bug now serves as a living barricade: the outer Bug cannot route past its teammate, and the contracting rim forces it out first.Rooted in place, the central Bug can only watch the rim tighten around it until it, too, is forced over the boundary.</p>
+            </div>
+          </div>
+        </div>
+         <!--/ Interpolating. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We thank the authors of <a href="https://nerfies.github.io">Nerfies</a> that kindly open sourced the template of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
