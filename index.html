@@ -277,5 +277,13 @@
   </div>
 </footer>
 
+
+<script>
+  document.querySelectorAll('video').forEach(v => {
+    v.muted = true;            // 静音
+    v.defaultMuted = true;     // 确保默认也是静音
+  });
+</script>
+
 </body>
 </html>
